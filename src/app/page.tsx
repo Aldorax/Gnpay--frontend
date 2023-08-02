@@ -9,10 +9,25 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
-      <Link href={"/login"}>Login</Link>
-      <Link href={"/register"}>Register</Link>
-      <Link href={"/dashboard"}>Dashboard</Link>
+    <main className="flex flex-col items-center justify-center w-screen h-screen bg-black">
+      <Link
+        className="p-4 rounded-lg border border-white min-w-[200px] my-2 text-white"
+        href={"/login"}
+      >
+        Login
+      </Link>
+      <Link
+        className="p-4 rounded-lg border border-white min-w-[200px] my-2 text-white"
+        href={"/register"}
+      >
+        Register
+      </Link>
+      <Link
+        className="p-4 rounded-lg border border-white min-w-[200px] my-2 text-white"
+        href={"/dashboard"}
+      >
+        Dashboard
+      </Link>
     </main>
   );
 }
