@@ -30,7 +30,7 @@ const AnalyticsChart: React.FC<AnalyticsChartProps> = ({ data }) => {
         datasets: [
           {
             data: data,
-            borderColor: "#2A63E2", // Color code for the graph line
+            borderColor: "transparent", // Color code for the graph line
             backgroundColor: "rgba(42, 99, 226, 0.2)", // Background color with opacity
             borderWidth: 3, // Set the width of the graph line
             fill: true, // Fill area under the line

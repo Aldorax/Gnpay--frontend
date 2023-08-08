@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import Link from "next/link";
 import "@/app/globals.css";
 import styles from "@/app/register.module.css";
+import Side from "@/components/Side";
 
 const PasswordOtpVerify = () => {
   const [password, setPassword] = useState("");
@@ -31,19 +32,7 @@ const PasswordOtpVerify = () => {
 
   return (
     <main className="md:max-w-screen md:max-h-screen bg-white flex p-6 overflow-x-hidden">
-      <div className="max-w-[50vw] min-w-[35vw] min-h-[95vh] bg-[#2A63E2] rounded-lg relative flex flex-col items-start justify-center">
-        <div className="absolute top-10 left-10">
-          <h1>Gnpay Africa Logo</h1>
-        </div>
-        <div className="mx-12 text-white">
-          <h1 className="text-7xl font-bold mb-4">Unlock Your Dreams.</h1>
-          <p className="text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus, ipsam? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Voluptatibus, ipsam?
-          </p>
-        </div>
-      </div>
+      <Side />
       <div className="max-w-[50vw] min-w-[60vw] min-h-[95vh] p-4 mx-4 text-center flex flex-col items-center justify-center relative">
         <div className="mb-10 mt-10">
           <h1 className="text-4xl font-semibold py-2 mb-3">
@@ -61,6 +50,7 @@ const PasswordOtpVerify = () => {
                 type="number"
                 name="otpcode"
                 id="firstname"
+                title="e"
                 placeholder=""
                 className={`${styles["register-input"]} text-[#77787D] px-4 py-8 rounded-2xl min-w-[100px] border border-black/10`}
               />
@@ -74,6 +64,7 @@ const PasswordOtpVerify = () => {
                 type="number"
                 name="otpcode"
                 id="lastname"
+                title="e"
                 placeholder=""
                 className={`${styles["register-input"]} text-[#77787D] px-4 py-8 rounded-2xl min-w-[100px] border border-black/10`}
               />
@@ -87,6 +78,7 @@ const PasswordOtpVerify = () => {
                 type="number"
                 name="otpcode"
                 id="email"
+                title="e"
                 placeholder=""
                 className={`${styles["register-input"]} text-[#77787D] px-4 py-8 rounded-2xl min-w-[100px] border border-black/10`}
               />
@@ -99,6 +91,7 @@ const PasswordOtpVerify = () => {
               <input
                 type="number"
                 name="otpcode"
+                title="e"
                 id="pswd"
                 placeholder=""
                 value={password}

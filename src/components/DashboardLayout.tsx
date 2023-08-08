@@ -9,7 +9,7 @@ const DashboardLayout = ({
 }) => {
   return (
     <div
-      className={`min-w-screen min-h-screen flex justify-between bg-[#E4E4E4] ${className}`}
+      className={`min-w-screen min-h-screen flex justify-between bg-[#fff] ${className}`}
     >
       {children}
     </div>

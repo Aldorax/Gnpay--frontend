@@ -24,7 +24,7 @@ export default function Home() {
       </Link>
       <Link
         className="p-4 rounded-lg border border-white min-w-[200px] my-2 text-white"
-        href={"/dashboard"}
+        href={"/user/dashboard"}
       >
         Dashboard
       </Link>

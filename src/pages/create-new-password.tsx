@@ -2,6 +2,7 @@ import React, { ChangeEvent, useState } from "react";
 import Link from "next/link";
 import "@/app/globals.css";
 import styles from "@/app/register.module.css";
+import Side from "@/components/Side";
 
 const CreateNewPassword = () => {
   const [password, setPassword] = useState("");
@@ -31,19 +32,7 @@ const CreateNewPassword = () => {
 
   return (
     <main className="md:max-w-screen md:max-h-screen bg-white flex p-6 overflow-x-hidden">
-      <div className="max-w-[50vw] min-w-[35vw] min-h-[95vh] bg-[#2A63E2] rounded-lg relative flex flex-col items-start justify-center">
-        <div className="absolute top-10 left-10">
-          <h1>Gnpay Africa Logo</h1>
-        </div>
-        <div className="mx-12 text-white">
-          <h1 className="text-5xl font-bold mb-4">Unlock Your Dreams</h1>
-          <p className="text-sm">
-            Lorem ipsum dolor sit amet consectetur. Etiam quam turpis ut eu.
-            Lectus quis eget viverra leo amet. Lorem ipsum dolor sit amet
-            consectetur. Etiam quam turpis ut eu.{" "}
-          </p>
-        </div>
-      </div>
+      <Side />
       <div className="max-w-[50vw] min-w-[60vw] min-h-[95vh] py-4 mx-10 text-center flex flex-col items-center justify-center relative">
         <div className="mb-10 mt-10">
           <h1 className="text-4xl font-semibold py-2 mb-3">
@@ -62,6 +51,7 @@ const CreateNewPassword = () => {
                 type="password"
                 name="pswd"
                 id="pswd"
+                title="pws"
                 placeholder=" "
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -150,6 +140,7 @@ const CreateNewPassword = () => {
                 type="password"
                 name="pswd2"
                 id="pswd2"
+                title="pws"
                 placeholder=" "
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -183,7 +174,10 @@ const CreateNewPassword = () => {
         </form>
         <p className=" mb-48 text-sm">
           Remeber your password?{" "}
-          <Link href={"/login"} className="text-[#2A63E2] font-semibold cursor-pointer">
+          <Link
+            href={"/login"}
+            className="text-[#2A63E2] font-semibold cursor-pointer"
+          >
             Log In
           </Link>
         </p>
