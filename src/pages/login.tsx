@@ -5,6 +5,12 @@ import styles from "@/app/register.module.css";
 import Image from "next/image";
 import image from "@/app/logo.png";
 import Side from "@/components/Side";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gnpay Login",
+  description: "Login to your Account",
+};
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -14,9 +20,11 @@ const Login = () => {
   const passwordsMatch = password === confirmPassword;
 
   return (
-    <main className="md:max-w-screen md:max-h-screen bg-white flex p-6 overflow-x-hidden">
-      <Side />
-      <div className="max-w-[50vw] min-w-[60vw] min-h-[95vh] p-4 mx-4 text-center flex flex-col items-center justify-center relative">
+    <main className="md:max-w-screen md:max-h-screen bg-white flex flex-col md:flex-row p-6 overflow-x-hidden">
+      <div className="hidden md:flex">
+        <Side />
+      </div>
+      <div className="md:max-w-[60vw] max-w-screen min-w-screen md:min-w-[60vw] min-h-[95vh] p-4 mx-4 text-center flex flex-col items-center justify-center relative">
         <div className="mb-10 mt-10">
           <h1 className="text-4xl font-semibold py-2 mb-3">
             Login to your account
@@ -27,44 +35,30 @@ const Login = () => {
         </div>
 
         <form className="flex flex-col items-center justify-center">
-          <div className="mb-6">
-            <div className={styles.inputContainer5}>
+          <div className="mb-4 w-[440px]">
+            <div>
+              <label htmlFor="email"></label>
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder=" "
-                className={`${styles["register-input"]} text-[#77787D] px-4 py-3 rounded-2xl min-w-[200px] border border-black/10`}
+                placeholder="Email adsress"
+                className={`text-[#77787D] px-4 py-3 rounded-lg min-w-full border border-black/10`}
               />
-              <label htmlFor="email" className={styles["floating-placeholder"]}>
-                Email
-              </label>
             </div>
           </div>
-          <div className="mb-1">
-            <div className={styles.inputContainer6}>
+          <div className="mb-1 w-[440px]">
+            <div>
               <input
                 type="password"
                 name="pswd"
                 id="pswd"
-                placeholder=" "
+                placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className={`${styles["register-input"]} text-[#77787D] px-4 py-3 rounded-lg min-w-[200px] border border-black/10`}
+                className={`text-[#77787D] px-4 py-3 rounded-lg w-full border border-black/10`}
               />
-              <label htmlFor="pswd" className={styles["floating-placeholder"]}>
-                Password
-              </label>
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "-20px",
-                  right: "0",
-                  fontSize: "12px",
-                  textDecorationColor: "red",
-                }}
-                className="font-bold"
-              ></div>
+              <label htmlFor="pswd"></label>
             </div>
           </div>
           <div className="min-w-[400px] mb-4 flex items-center justify-between">

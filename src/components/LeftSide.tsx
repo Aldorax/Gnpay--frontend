@@ -53,11 +53,11 @@ const LeftSide = () => {
         <div className="w-full self-start flex px-2">
           <Link
             className={`py-4 flex gap-2 items-center px-10 text-white ${
-              router.pathname === "/name"
+              router.pathname === "/user/settings"
                 ? "bg-[#2A63E2] font-bold text-white"
                 : "bg-transparent font-bold text-[#fff]"
             } my-1 rounded-xl text-left w-full`}
-            href="/name"
+            href="/user/settings"
           >
             <svg
               width="30"
@@ -86,11 +86,11 @@ const LeftSide = () => {
         <div className="w-full self-start flex px-2">
           <Link
             className={`py-4 flex gap-2 items-center px-10 text-white ${
-              router.pathname === "/name"
+              router.pathname === "/user/transaction"
                 ? "bg-[#2A63E2] font-bold"
                 : "bg-transparent font-bold text-[#fff]"
             } my-1 rounded-xl text-left w-full`}
-            href="/name"
+            href="/user/transaction"
           >
             <svg
               width="30"

@@ -8,7 +8,9 @@ const successfulKyc = () => {
   return (
     <main>
       <DashboardLayout className="flex">
-        <LeftSide />
+        <div className="hidden lg:flex">
+          <LeftSide />
+        </div>
         <KycCompleteRightSide />
       </DashboardLayout>
     </main>

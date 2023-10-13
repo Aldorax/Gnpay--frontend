@@ -41,7 +41,7 @@ const FinancingRight = () => {
   ];
 
   return (
-    <main className="flex w-full h-full">
+    <main className="flex w-full h-full pb-5">
       <div className="w-[320px] mr-10"></div>
 
       <div className="flex flex-col w-full h-full">

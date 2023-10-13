@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "@/app/globals.css";
 import MoneyBar from "./MoneyBar";
 import MoneyBarRight from "./MoneyBarRight";
@@ -7,6 +8,13 @@ import Transactions from "./Transacations";
 import Image from "next/image";
 import image from "@/app/user.png";
 import Link from "next/link";
+import {
+  Avatar,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from "@nextui-org/react";
 
 const data = [
   {
@@ -55,11 +63,12 @@ const data = [
 ];
 
 const RightSide = () => {
+  const [verified, setVerified] = useState(false);
   return (
     <main className="flex w-full h-full">
-      <div className="w-[320px] mr-10"></div>
+      <div className="lg:w-[320px] w-0 lg:mr-10"></div>
       <div className="flex flex-col w-full h-full">
-        <div className="flex justify-between items-center px-10 py-4 text-sm bg-[#F5F7FA]">
+        <div className="flex justify-between items-center px-0 lg:px-10 py-4 text-sm bg-[#F5F7FA]">
           <div>
             <h1 className="mx-4 font-bold text-2xl">HOME</h1>
           </div>
@@ -95,106 +104,118 @@ const RightSide = () => {
               </svg>
             </div>
             <div className="w-14 h-14 flex items-center justify-center rounded-full">
-              <Image
-                src={image}
-                alt="dk"
-                className="mx-auto"
-                width={30}
-                height={30}
-              />
+              <Dropdown placement="bottom-end">
+                <DropdownTrigger>
+                  <Avatar
+                    isBordered
+                    as="button"
+                    className="transition-transform"
+                    color="secondary"
+                    name="Jason Hughes"
+                    size="sm"
+                    src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                  />
+                </DropdownTrigger>
+                <DropdownMenu aria-label="Profile Actions" variant="flat">
+                  <DropdownItem key="profile" className="h-14 gap-2">
+                    <p className="font-semibold">Signed in as</p>
+                    <p className="font-semibold">zoey@example.com</p>
+                  </DropdownItem>
+                  <DropdownItem key="settings">My Settings</DropdownItem>
+                  <DropdownItem key="team_settings">Team Settings</DropdownItem>
+                  <DropdownItem key="analytics">Analytics</DropdownItem>
+                  <DropdownItem key="system">System</DropdownItem>
+                  <DropdownItem key="configurations">
+                    Configurations
+                  </DropdownItem>
+                  <DropdownItem key="help_and_feedback">
+                    Help & Feedback
+                  </DropdownItem>
+                  <DropdownItem key="logout" color="danger">
+                    Log Out
+                  </DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
             </div>
             <div className="mx-2 flex gap-2 items-center">
               <h1>Emmanuel Appah</h1>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 16.7996C11.3 16.7996 10.6 16.5296 10.07 15.9996L3.55002 9.47965C3.26002 9.18965 3.26002 8.70965 3.55002 8.41965C3.84002 8.12965 4.32002 8.12965 4.61002 8.41965L11.13 14.9396C11.61 15.4196 12.39 15.4196 12.87 14.9396L19.39 8.41965C19.68 8.12965 20.16 8.12965 20.45 8.41965C20.74 8.70965 20.74 9.18965 20.45 9.47965L13.93 15.9996C13.4 16.5296 12.7 16.7996 12 16.7996Z"
-                  fill="#0A0A0B"
-                />
-              </svg>
             </div>
           </div>
         </div>
 
-        <div className="p-5 mx-16 mt-10 rounded-lg bg-gradient-to-br from-[#EBFFE8] to-[#D5FFCE] flex">
-          {/* <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 9V14"
-              stroke="#9C4E07"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M11.9999 21.4103H5.93993C2.46993 21.4103 1.01993 18.9303 2.69993 15.9003L5.81993 10.2803L8.75993 5.00027C10.5399 1.79027 13.4599 1.79027 15.2399 5.00027L18.1799 10.2903L21.2999 15.9103C22.9799 18.9403 21.5199 21.4203 18.0599 21.4203H11.9999V21.4103Z"
-              stroke="#9C4E07"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M11.9946 17H12.0036"
-              stroke="#9C4E07"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg> */}
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="#079C15"
-              stroke-width="1.5"
-            />
-            <path
-              d="M8.5 12.5L10.5 14.5L15.5 9.5"
-              stroke="#079C15"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+        {verified ? (
+          <div className="p-5 mx-16 mt-10 rounded-lg bg-gradient-to-br from-[#EBFFE8] to-[#D5FFCE] flex">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="#079C15"
+                stroke-width="1.5"
+              />
+              <path
+                d="M8.5 12.5L10.5 14.5L15.5 9.5"
+                stroke="#079C15"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
 
-          <p className="px-3 text-[#079C15]">
-            Congratulations! Your KYC application has been approved
-          </p>
-          {/* <p className="px-3 text-[#9C4E07]">
-            In order to start using your account, you are required to complete
-            your{" "}
-            <Link href={"/user/kyc"} className="font-bold underline">
-              compliance check
-            </Link>
-          </p> */}
-        </div>
+            <p className="px-3 text-[#079C15]">
+              Congratulations! Your KYC application has been approved
+            </p>
+          </div>
+        ) : (
+          <div className="p-5 lg:mx-16 mx-4 lg:mt-10 mt-4 rounded-lg bg-gradient-to-br from-[#FFF4E8] to-[#FFECCE] flex">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="#9C4E07"
+                stroke-width="1.5"
+              />
+              <path
+                d="M8.5 12.5L10.5 14.5L15.5 9.5"
+                stroke="#9C4E07"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
 
-        <div className="mx-16 mt-10 rounded-lg flex items-center justify-between">
+            <p className="px-1 md:px-3 text-[#9C4E07]">
+              In order to start using your account, you are required to complete
+              your{" "}
+              <Link href={"/user/kyc"} className="font-bold underline">
+                compliance check
+              </Link>
+            </p>
+          </div>
+        )}
+
+        <div className="mx-16 mt-10 rounded-lg flex flex-col md:flex-row items-center justify-between">
           <MoneyBar />
-          <MoneyBarRight />
+          {/* <MoneyBarRight /> */}
         </div>
 
-        <div className="mx-16 mt-10 rounded-lg flex items-center justify-between">
+        <div className="mx-16 mt-10 rounded-lg flex items-center justify-between overflow-x-scroll gap-2">
           <Link
             href={"/user/financing"}
-            className="border border-gray-400/10p-4 min-w-[330px] py-10 px-4 rounded-xl flex flex-col text-xl"
+            className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[230px] py-10 px-4 rounded-xl flex flex-col text-xl"
           >
             <svg
               width="50"
@@ -208,7 +229,7 @@ const RightSide = () => {
                 fill="#0A0A0B"
               />
             </svg>
-            <div className="text-2xl font-normal flex items-center gap-10 relative">
+            <div className="text-sm lg:text-2xl font-normal flex items-center gap-10 relative">
               <p>Auto Gas Financing</p>
               <svg
                 width="32"
@@ -229,7 +250,7 @@ const RightSide = () => {
               </svg>
             </div>
           </Link>
-          <div className="border border-gray-400/10p-4 min-w-[330px] py-10 px-4 rounded-xl flex flex-col text-xl">
+          <div className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[230px] py-10 px-4 rounded-xl flex flex-col text-xl">
             <div className="flex flex-col">
               <svg
                 width="50"
@@ -247,7 +268,7 @@ const RightSide = () => {
                   fill="#0A0A0B"
                 />
               </svg>
-              <div className="text-2xl font-normal flex items-center gap-10 relative">
+              <div className="text-sm lg:text-2xl font-normal flex items-center gap-10 relative">
                 <p>Inventory Financing</p>
                 <svg
                   width="32"
@@ -269,7 +290,7 @@ const RightSide = () => {
               </div>
             </div>
           </div>
-          <div className="border border-gray-400/10p-4 min-w-[330px] py-10 px-4 rounded-xl flex flex-col text-xl">
+          <div className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[230px] py-10 px-4 rounded-xl flex flex-col text-xl">
             <svg
               width="50"
               height="50"
@@ -282,7 +303,7 @@ const RightSide = () => {
                 fill="#0A0A0B"
               />
             </svg>
-            <div className="text-2xl font-normal flex items-center gap-10 relative">
+            <div className="text-sm lg:text-2xl font-normal flex items-center gap-10 relative">
               <p>Airtime Purchase</p>
               <svg
                 width="32"
@@ -303,7 +324,7 @@ const RightSide = () => {
               </svg>
             </div>
           </div>
-          <div className="border border-gray-400/10p-4 min-w-[330px] py-10 px-4 rounded-xl flex flex-col text-xl">
+          <div className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[230px] py-10 px-4 rounded-xl flex flex-col text-xl">
             <svg
               width="50"
               height="50"
@@ -320,7 +341,7 @@ const RightSide = () => {
                 fill="#0A0A0B"
               />
             </svg>
-            <div className="text-2xl font-normal flex items-center gap-10 relative">
+            <div className="text-sm lg:text-2xl font-normal flex items-center gap-10 relative">
               <p>Uber VIP</p>
               <svg
                 width="32"
@@ -343,9 +364,14 @@ const RightSide = () => {
           </div>
         </div>
 
-        <div className="flex mb-16">
+        {/* <div className="lg:flex mb-16 lg:flex-row flex-col hidden">
           <Transactions data={data} />
           <AnalyticsBar />
+        </div> */}
+
+        <div className="flex mb-16 lg:flex-row flex-col lg:hidden">
+          <AnalyticsBar />
+          <Transactions data={data} />
         </div>
       </div>
     </main>

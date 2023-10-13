@@ -8,7 +8,9 @@ const KYC = () => {
   return (
     <main>
       <DashboardLayout className="flex">
-        <LeftSide />
+        <div className="hidden lg:flex">
+          <LeftSide />
+        </div>
         <KycRightSide />
       </DashboardLayout>
     </main>

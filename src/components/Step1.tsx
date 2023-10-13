@@ -29,9 +29,9 @@ const Step1 = () => {
         </svg>
       </button>
 
-      <div className="flex justify-around gap-10 mt-10">
+      <div className="flex flex-col lg:flex-row justify-around gap-10 mt-10">
         <div className="min-w-[350px] border-4 border-gray-200 p-2 border-dashed min-h-[200px]">
-          <div className="flex flex-col justify-center items-center p-4">
+          <div className="flex flex-col justify-center items-center p-4 min-w-[400px]">
             <p>
               <svg
                 width="34"

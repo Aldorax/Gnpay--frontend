@@ -1,11 +1,18 @@
 import React from "react";
 import Image from "next/image";
 import image from "@/app/user.png";
+import {
+  Avatar,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from "@nextui-org/react";
 
 const Header = () => {
   return (
     <div className="flex flex-col w-full h-full">
-      <div className="flex justify-between items-center px-10 py-4 text-sm bg-[#F5F7FA]">
+      <div className="flex justify-between items-center px-0 lg:px-10 py-4 text-sm bg-[#F5F7FA]">
         <div>
           <h1 className="mx-4 font-bold text-2xl">KYC</h1>
         </div>
@@ -41,28 +48,39 @@ const Header = () => {
             </svg>
           </div>
           <div className="w-14 h-14 flex items-center justify-center rounded-full">
-            <Image
-              src={image}
-              alt="dk"
-              className="mx-auto"
-              width={30}
-              height={30}
-            />
+            <Dropdown placement="bottom-end">
+              <DropdownTrigger>
+                <Avatar
+                  isBordered
+                  as="button"
+                  className="transition-transform"
+                  color="secondary"
+                  name="Jason Hughes"
+                  size="sm"
+                  src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                />
+              </DropdownTrigger>
+              <DropdownMenu aria-label="Profile Actions" variant="flat">
+                <DropdownItem key="profile" className="h-14 gap-2">
+                  <p className="font-semibold">Signed in as</p>
+                  <p className="font-semibold">zoey@example.com</p>
+                </DropdownItem>
+                <DropdownItem key="settings">My Settings</DropdownItem>
+                <DropdownItem key="team_settings">Team Settings</DropdownItem>
+                <DropdownItem key="analytics">Analytics</DropdownItem>
+                <DropdownItem key="system">System</DropdownItem>
+                <DropdownItem key="configurations">Configurations</DropdownItem>
+                <DropdownItem key="help_and_feedback">
+                  Help & Feedback
+                </DropdownItem>
+                <DropdownItem key="logout" color="danger">
+                  Log Out
+                </DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </div>
           <div className="mx-2 flex gap-2 items-center">
             <h1>Emmanuel Appah</h1>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 16.7996C11.3 16.7996 10.6 16.5296 10.07 15.9996L3.55002 9.47965C3.26002 9.18965 3.26002 8.70965 3.55002 8.41965C3.84002 8.12965 4.32002 8.12965 4.61002 8.41965L11.13 14.9396C11.61 15.4196 12.39 15.4196 12.87 14.9396L19.39 8.41965C19.68 8.12965 20.16 8.12965 20.45 8.41965C20.74 8.70965 20.74 9.18965 20.45 9.47965L13.93 15.9996C13.4 16.5296 12.7 16.7996 12 16.7996Z"
-                fill="#0A0A0B"
-              />
-            </svg>
           </div>
         </div>
       </div>

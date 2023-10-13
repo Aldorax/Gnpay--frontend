@@ -11,7 +11,7 @@ const Step3 = () => {
       <div className="p-5 mx-16 mt-10 rounded-lg flex flex-col items-center justify-center">
         <p className="font-bold">Confirm Details</p>
 
-        <div className="min-h-[300px] min-w-[300px] mt-5 rounded-lg p-2 flex items-center justify-center gap-4">
+        <div className="min-h-[300px] min-w-[300px] mt-5 rounded-lg p-2 flex flex-col md:flex-row items-center justify-center gap-">
           <div className="flex flex-col items-center">
             <p className="font-bold">Front side of ID</p>
             <div className="min-h-[230px] max-h-[180px] min-w-[300px] max-w-[300px] rounded-lg p-2 mx-5 flex items-center justify-center border border-dashed border-black border-spacing-5">

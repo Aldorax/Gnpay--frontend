@@ -1,16 +1,17 @@
 import React from "react";
 import Header from "./Header";
+import Link from "next/link";
 
 const KycCompleteRightSide = () => {
   return (
     <main className="flex w-full h-full">
-      <div className="w-[320px] mr-10"></div>
+      <div className="lg:w-[320px] w-0 lg:mr-10"></div>
       <div className="flex flex-col w-full h-full">
         <Header />
 
-        <div className="p-5 mx-16 mt-10 rounded-lg flex flex-col justify-center relative items-center bg-[#FAFAFA] min-h-[600px]">
+        <div className="p-5 mx-16 mt-10 rounded-lg flex flex-col justify-center relative items-center bg-[#f5f2f2] h-[300px] md:min-h-[600px]">
           <h1 className="mb-3 text-4xl font-bold">Submitted</h1>
-          <p className="text-lg font-semibold text-[#6A6A6A] mb-10">
+          <p className="text-medium md:text-lg font-semibold text-[#6A6A6A] mb-10 text-center">
             Your KYC application has been submitted and is under review
           </p>
           <svg
@@ -27,6 +28,12 @@ const KycCompleteRightSide = () => {
               fill="#E4E4E4"
             />
           </svg>
+          <Link
+            href={"/user/dashboard"}
+            className="p-4 bg-blue-600 rounded-lg mt-6 text-white font-semibold"
+          >
+            Go to Home
+          </Link>
         </div>
       </div>
     </main>

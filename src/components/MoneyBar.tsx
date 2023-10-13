@@ -2,9 +2,9 @@ import React from "react";
 
 const MoneyBar = () => {
   return (
-    <div className="min-w-[37vw] max-w-[37vw] min-h-[200px] border border-gray-400/25 px-5 py-4 rounded-lg flex flex-col justify-between relative">
-      <div className="flex items-center gap-5">
-        <div className="p-3 rounded-full bg-black">
+    <div className="lg:min-w-[37vw] lg:max-w-[37vw] lg:min-h-[200px] min-w-[80vw] max-w-[80vw] min-h-[170px] border border-gray-400/25 px-5 py-4 rounded-lg flex flex-col justify-between relative">
+      <div className="flex flex-col lg:flex-row items-center gap-5">
+        <div className="p-3 rounded-full bg-black hidden lg:flex">
           <svg
             width="50"
             height="50"
@@ -29,13 +29,13 @@ const MoneyBar = () => {
 
         <div>
           <h1 className="text-lg font-normal">Wallet Balance</h1>
-          <p className="font-semibold text-5xl">
-            <span className="line-through divide-double">N</span> 115,000.00
+          <p className="font-semibold text-xl lg:text-5xl text-center">
+            <span className="line-through divide-double">N</span> 0.00
           </p>
         </div>
       </div>
       <button
-        className="self-end p-5 bg-[#2A63E2] min-w-[150px] rounded-xl text-white text-lg"
+        className="self-center lg:self-end px-2 py-4 md:p-5 bg-[#2A63E2] min-w-[150px] max-w-[150px] rounded-xl text-white text-medium md:text-lg"
         type="button"
       >
         + Add money

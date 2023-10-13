@@ -7,8 +7,10 @@ import "@/app/globals.css";
 const dashboard = () => {
   return (
     <main>
-      <DashboardLayout className="flex">
-        <LeftSide />
+      <DashboardLayout className="flex flex-col md:flex-row">
+        <div className="hidden lg:flex">
+          <LeftSide />
+        </div>
         <RightSide />
       </DashboardLayout>
     </main>

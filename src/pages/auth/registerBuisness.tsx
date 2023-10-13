@@ -6,7 +6,7 @@ import image from "@/app/logo.png";
 import Image from "next/image";
 import Side from "@/components/Side";
 
-const Register = () => {
+const RegisterBuisness = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -33,10 +33,12 @@ const Register = () => {
   const passwordsMatch = password === confirmPassword;
 
   return (
-    <main className="md:max-w-screen md:max-h-screen bg-white flex p-6 overflow-x-hidden">
-      <Side />
+    <main className="md:max-w-screen md:max-h-screen bg-white flex flex-col md:flex-row p-6 overflow-x-hidden">
+      <div className="hidden md:flex">
+        <Side />
+      </div>
 
-      <div className="max-w-[50vw] min-w-[60vw] min-h-[95vh] p-4 mx-4 text-center flex flex-col items-center justify-center relative">
+      <div className="md:max-w-[60vw] max-w-screen min-w-screen md:min-w-[60vw] min-h-[95vh] p-4 mx-4 text-center flex flex-col items-center justify-center relative">
         <div className="mb-10 mt-10">
           <h1 className="text-4xl font-semibold py-2 mb-3">
             Sign up for an account
@@ -47,66 +49,52 @@ const Register = () => {
         </div>
 
         <form className="flex flex-col items-center justify-center">
-          <div className="flex gap-2 mb-6">
-            <div className={styles.inputContainer}>
+          <div className="flex gap-2 mb-4 md:flex-row flex-col w-[440px]">
+            <div className="flex flex-col">
+              <label htmlFor="firstname"></label>
               <input
                 type="text"
                 name="Fname"
                 id="firstname"
-                placeholder=" "
-                className={`${styles["register-input"]} text-[#77787D] px-4 py-3 rounded-2xl min-w-[200px] border border-black/10`}
+                placeholder="First Name"
+                className={`text-[#77787D] px-4 py-3 rounded-lg w-full md:min-w-[200px] border border-black/10`}
               />
-              <label
-                htmlFor="firstname"
-                className={styles["floating-placeholder"]}
-              >
-                First Name
-              </label>
             </div>
-            <div className={styles.inputContainer}>
+            <div className="flex flex-col">
+              <label htmlFor="lastname"></label>
               <input
                 type="text"
                 name="Lname"
                 id="lastname"
-                placeholder=" "
-                className={`${styles["register-input"]} text-[#77787D] px-4 py-3 rounded-2xl min-w-[200px] border border-black/10`}
+                placeholder="Last Name"
+                className={`text-[#77787D] px-4 py-3 rounded-lg min-w-[200px] border border-black/10`}
               />
-              <label
-                htmlFor="lastname"
-                className={styles["floating-placeholder"]}
-              >
-                Last Name
-              </label>
             </div>
           </div>
-          <div className="mb-6">
-            <div className={styles.inputContainer1}>
+          <div className="mb-4 w-[440px]">
+            <div>
+              <label htmlFor="email"></label>
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder=" "
-                className={`${styles["register-input"]} text-[#77787D] px-4 py-3 rounded-2xl min-w-[200px] border border-black/10`}
+                placeholder="Email adsress"
+                className={`text-[#77787D] px-4 py-3 rounded-lg min-w-full border border-black/10`}
               />
-              <label htmlFor="email" className={styles["floating-placeholder"]}>
-                Email
-              </label>
             </div>
           </div>
-          <div className="mb-1">
-            <div className={styles.inputContainer2}>
+          <div className="mb-1 w-[440px]">
+            <div>
               <input
                 type="password"
                 name="pswd"
                 id="pswd"
-                placeholder=" "
+                placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className={`${styles["register-input"]} text-[#77787D] px-4 py-3 rounded-lg min-w-[200px] border border-black/10`}
+                className={`text-[#77787D] px-4 py-3 rounded-lg w-full border border-black/10`}
               />
-              <label htmlFor="pswd" className={styles["floating-placeholder"]}>
-                Password
-              </label>
+              <label htmlFor="pswd"></label>
               <div
                 style={{
                   position: "absolute",
@@ -187,30 +175,38 @@ const Register = () => {
               <p className="text-red-500 text-sm">Passwords do not match!</p>
             )}
 
-            <div className={styles.inputContainer2}>
+            <div className="mt-3">
               <input
                 type="password"
                 name="pswd2"
                 id="pswd2"
-                placeholder=" "
+                placeholder="Confirm Password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
-                className={`${styles["register-input"]} text-[#77787D] px-4 py-3 rounded-lg min-w-[200px] border border-black/10`}
+                className={`text-[#77787D] px-4 py-3 rounded-lg w-full border border-black/10`}
               />
-              <label htmlFor="pswd2" className={styles["floating-placeholder"]}>
-                Confirm Password
-              </label>
+              <label htmlFor="pswd2"></label>
             </div>
           </div>
-          <p className="mb-6 text-sm">
-            By creating an account, you agree to our{" "}
-            <span className="text-[#2A63E2] font-semibold cursor-pointer">
-              terms and conditions
-            </span>
-          </p>
+          <div className="text-medium w-[435px] my-4 text-start gap-2">
+            <input
+              type="checkbox"
+              name="rememberMe"
+              id="Rmbe"
+              title="e"
+              placeholder=" "
+              className="rounded-none"
+            />
+            <label htmlFor="remember" className="mx-2">
+              By creating an account, you agree to our{" "}
+              <span className="text-[#2A63E2] font-semibold cursor-pointer">
+                terms and conditions
+              </span>
+            </label>
+          </div>
           <Link
             href={"/verify-email"}
-            className="text-white font-semibold px-4 py-3 min-w-[440px] border border-white bg-[#2A63E2] rounded-full mb-6"
+            className="text-white font-semibold px-4 py-3 min-w-[440px] border border-white bg-[#2A63E2] rounded-full mb-4"
           >
             Sign Up
           </Link>
@@ -238,4 +234,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterBuisness;

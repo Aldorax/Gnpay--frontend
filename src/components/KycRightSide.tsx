@@ -43,32 +43,31 @@ const KycRightSide = () => {
 
   return (
     <main className="flex w-full h-full">
-      <div className="w-[320px] mr-10"></div>
+      <div className="lg:w-[320px] w-0 mr-0 lg:mr-10"></div>
 
       <div className="flex flex-col w-full h-full">
         <Header />
         <div className="p-5 mx-16 mt-10 rounded-lg flex justify-between relative items-center">
           <div
-            className={`border-b-4 p-1 w-[40vw] mx-auto mb-4 relative top-8 ${
-              activeStep === 3 ? "border-[#2A63E2]" : "border-[#ccc]"
-            }`}
-          ></div>
-          <div
-            className={`flex items-center w-full justify-evenly absolute left-0 top-2`}
+            className={`flex items-center w-full justify-between lg:justify-evenly absolute left-0 top-2`}
           >
-            {steps.map((step) => (
-              <div>
+            {steps.map((step, index) => (
+              <div key={step.id} className="relative z-10">
                 <p className="mb-4">{step.label}</p>
                 <div
-                  key={step.id}
                   className={`${styles.dot} ${
-                    activeStep === step.id
-                      ? styles.active
-                      : activeStep === 3
-                      ? styles.active
-                      : ""
+                    activeStep > index ? styles.active : ""
                   }`}
                 />
+                {index < steps.length - 1 && (
+                  <div
+                    className={`absolute top-10 mt-3.5 left-3 w-[32vw] md:w-[40vw] lg:w-[20vw] h-1 border-t-2 ${
+                      activeStep > index + 1
+                        ? "border-[#0000FF]"
+                        : "border-[#ccc]"
+                    }`}
+                  />
+                )}
               </div>
             ))}
           </div>
@@ -87,7 +86,7 @@ const KycRightSide = () => {
         >
           Step 1
         </button> */}
-        <div className="flex gap-2 items-center justify-center mx-auto">
+        <div className="flex gap-2 items-center justify-center mx-auto pb-5">
           {activeStep > 1 ? (
             <button
               className={`text-[#2A63E2] border border-[#2A63E2] p-5 min-w-[200px] max-w-[200px] mx-auto bg-white rounded-full mt-4 ${

@@ -4,7 +4,7 @@ import AnalyticsChart from "./Analytics";
 const AnalyticsBar = () => {
   const analyticsData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   return (
-    <div className="border-gray-300 min-w-[700px] max-w-[700px] p-10 ml-16 mt-10 rounded-lg bg-white h-[300px]">
+    <div className="border-gray-300 min-w-[400px] md:min-w-[700px] max-w-[400px] md:max-w-[700px] p-4 md:p-10 ml-16 mt-10 rounded-lg bg-white h-[250px] md:h-[300px]">
       <div className="flex items-center justify-between">
         <h1 className="font-bold text-xl">Analytics</h1>
         <div className="flex gap-3 items-center">
