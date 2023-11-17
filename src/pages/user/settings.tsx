@@ -14,20 +14,24 @@ import {
   DropdownTrigger,
 } from "@nextui-org/react";
 import SettingsComponent from "@/components/SettingsComponent";
+import { Menu } from "lucide-react";
 
 const settings = () => {
   return (
     <DashboardLayout className="">
       <LeftSide />
       <main className="flex w-full h-full">
-        <div className="w-[320px] mr-10"></div>
+        <div className="sm:w-[320px] sm:mr-10"></div>
         <div className="flex flex-col w-full h-full">
-          <div className="flex justify-between items-center px-10 py-4 text-sm bg-[#F5F7FA]">
+          <div className="flex justify-between items-center sm:px-10 px-4 py-4 text-sm bg-[#F5F7FA]">
+            <Menu size={`${30}px`} className="sm:hidden block" />
             <div>
-              <h1 className="mx-4 font-bold text-2xl">SETTINGS</h1>
+              <h1 className="sm:mx-4 sm:font-bold sm:text-2xl text-xl font-semibold">
+                SETTINGS
+              </h1>
             </div>
             <div className="flex items-center">
-              <div className="mx-5 flex gap-2">
+              <div className="sm:first:mx-5 flex gap-2">
                 <svg
                   width="24"
                   height="24"
@@ -57,7 +61,7 @@ const settings = () => {
                   />
                 </svg>
               </div>
-              <div className="w-14 h-14 flex items-center justify-center rounded-full">
+              <div className="w-14 h-14 flex items-center sm:justify-center justify-end rounded-full">
                 <Dropdown placement="bottom-end">
                   <DropdownTrigger>
                     <Avatar
@@ -93,14 +97,14 @@ const settings = () => {
                   </DropdownMenu>
                 </Dropdown>
               </div>
-              <div className="mx-2 flex gap-2 items-center">
+              <div className="mx-2 sm:flex gap-2 items-center hidden">
                 <h1>Emmanuel Appah</h1>
               </div>
             </div>
           </div>
           <div
-            style={{ width: "80%", height: "90%" }}
-            className="absolute right-12 p-10 mt-20"
+            // style={{ width: "80%", height: "90%" }}
+            className="sm:absolute right-12 sm:p-10 sm:mt-20 m-4  sm:w-[80vw] sm:h-[90vh"
           >
             <SettingsComponent />
           </div>

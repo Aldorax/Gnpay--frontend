@@ -8,6 +8,7 @@ import Transactions from "./Transacations";
 import Image from "next/image";
 import image from "@/app/user.png";
 import Link from "next/link";
+import {Menu} from "lucide-react"
 import {
   Avatar,
   Dropdown,
@@ -68,12 +69,15 @@ const RightSide = () => {
     <main className="flex w-full h-full">
       <div className="lg:w-[320px] w-0 lg:mr-10"></div>
       <div className="flex flex-col w-full h-full">
-        <div className="flex justify-between items-center px-0 lg:px-10 py-4 text-sm bg-[#F5F7FA]">
-          <div>
+        <div className="flex justify-between items-center sm:px-0 px-4 lg:px-10 py-4 text-sm bg-[#F5F7FA] sm:w-full w-screen">
+          <div className="sm:block hidden">
             <h1 className="mx-4 font-bold text-2xl">HOME</h1>
           </div>
+          <div className="sm:hidden block">
+            <Menu size={`${30}px`} />
+          </div>
           <div className="flex items-center">
-            <div className="mx-5 flex gap-2">
+            <div className="sm:mx-5 flex gap-2">
               <svg
                 width="24"
                 height="24"
@@ -103,7 +107,7 @@ const RightSide = () => {
                 />
               </svg>
             </div>
-            <div className="w-14 h-14 flex items-center justify-center rounded-full">
+            <div className="w-14 h-14 flex items-center sm:justify-center rounded-full justify-end ">
               <Dropdown placement="bottom-end">
                 <DropdownTrigger>
                   <Avatar
@@ -137,14 +141,14 @@ const RightSide = () => {
                 </DropdownMenu>
               </Dropdown>
             </div>
-            <div className="mx-2 flex gap-2 items-center">
+            <div className="mx-2 sm:flex gap-2 items-center hidden">
               <h1>Emmanuel Appah</h1>
             </div>
           </div>
         </div>
 
         {verified ? (
-          <div className="p-5 mx-16 mt-10 rounded-lg bg-gradient-to-br from-[#EBFFE8] to-[#D5FFCE] flex">
+          <div className="p-5 sm:mx-16 sm:mt-10 mx-4 mt-4 rounded-lg bg-gradient-to-br from-[#EBFFE8] to-[#D5FFCE] flex">
             <svg
               width="24"
               height="24"
@@ -173,7 +177,7 @@ const RightSide = () => {
             </p>
           </div>
         ) : (
-          <div className="p-5 lg:mx-16 mx-4 lg:mt-10 mt-4 rounded-lg bg-gradient-to-br from-[#FFF4E8] to-[#FFECCE] flex">
+          <div className="p-5 sm:mx-16 mx-4 sm:mt-10 mt-4 rounded-lg bg-gradient-to-br from-[#FFF4E8] to-[#FFECCE] flex">
             <svg
               width="24"
               height="24"
@@ -207,15 +211,15 @@ const RightSide = () => {
           </div>
         )}
 
-        <div className="mx-16 mt-10 rounded-lg flex flex-col md:flex-row items-center justify-between">
+        <div className="sm:mx-16 sm:mt-10 mt-4 mx-4 rounded-lg flex flex-col md:flex-row items-center justify-between ">
           <MoneyBar />
           {/* <MoneyBarRight /> */}
         </div>
 
-        <div className="mx-16 mt-10 rounded-lg flex items-center justify-between overflow-x-scroll gap-2">
+        <div className="sm:mx-16 sm:mt-10 mx-4 mt-4 rounded-lg flex items-center justify-between overflow-x-scroll gap-2">
           <Link
             href={"/user/financing"}
-            className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[230px] py-10 px-4 rounded-xl flex flex-col text-xl"
+            className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[150px] sm:py-10 py-5 sm:px-4 px-2 rounded-xl flex flex-col text-xl"
           >
             <svg
               width="50"
@@ -230,7 +234,7 @@ const RightSide = () => {
               />
             </svg>
             <div className="text-sm lg:text-2xl font-normal flex items-center gap-10 relative">
-              <p>Auto Gas Financing</p>
+              <p className="sm:w-auto w-[100px] ">Auto Gas Financing</p>
               <svg
                 width="32"
                 height="32"
@@ -250,7 +254,7 @@ const RightSide = () => {
               </svg>
             </div>
           </Link>
-          <div className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[230px] py-10 px-4 rounded-xl flex flex-col text-xl">
+          <div className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[150px] sm:py-10 py-5 sm:px-4 px-2 rounded-xl flex flex-col text-xl">
             <div className="flex flex-col">
               <svg
                 width="50"
@@ -269,7 +273,7 @@ const RightSide = () => {
                 />
               </svg>
               <div className="text-sm lg:text-2xl font-normal flex items-center gap-10 relative">
-                <p>Inventory Financing</p>
+                <p className="sm:w-auto w-[100px]">Inventory Financing</p>
                 <svg
                   width="32"
                   height="32"
@@ -290,7 +294,7 @@ const RightSide = () => {
               </div>
             </div>
           </div>
-          <div className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[230px] py-10 px-4 rounded-xl flex flex-col text-xl">
+          <div className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[150px] sm:py-10 py-5 sm:px-4 px-2 rounded-xl flex flex-col text-xl">
             <svg
               width="50"
               height="50"
@@ -304,7 +308,7 @@ const RightSide = () => {
               />
             </svg>
             <div className="text-sm lg:text-2xl font-normal flex items-center gap-10 relative">
-              <p>Airtime Purchase</p>
+              <p className="sm:w-auto w-[100px]">Airtime Purchase</p>
               <svg
                 width="32"
                 height="32"
@@ -324,7 +328,7 @@ const RightSide = () => {
               </svg>
             </div>
           </div>
-          <div className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[230px] py-10 px-4 rounded-xl flex flex-col text-xl">
+          <div className="border border-gray-400/10p-4 md:min-w-[330px] min-w-[150px] sm:py-10 py-5 sm:px-4 px-2 rounded-xl flex flex-col text-xl">
             <svg
               width="50"
               height="50"
@@ -342,7 +346,7 @@ const RightSide = () => {
               />
             </svg>
             <div className="text-sm lg:text-2xl font-normal flex items-center gap-10 relative">
-              <p>Uber VIP</p>
+              <p className="sm:w-auto w-[50px]">Uber VIP</p>
               <svg
                 width="32"
                 height="32"
@@ -369,7 +373,7 @@ const RightSide = () => {
           <AnalyticsBar />
         </div> */}
 
-        <div className="flex mb-16 lg:flex-row flex-col lg:hidden">
+        <div className="flex mb-16 lg:flex-row flex-col items-center justify-center">
           <AnalyticsBar />
           <Transactions data={data} />
         </div>

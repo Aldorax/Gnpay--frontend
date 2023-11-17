@@ -3,12 +3,13 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import image from "@/app/logo.png";
+import { X } from "lucide-react";
 
 const LeftSide = () => {
   const router = useRouter();
 
   return (
-    <div className="min-w-[320px] max-w-[320px] bg-[#000] p-5 items-center flex flex-col text-center fixed h-screen">
+    <div className="min-w-[320px] max-w-[320px] bg-[#000] p-5 items-center flex flex-col text-center fixed h-screen z-10">
       <div className="flex flex-col w-full">
         <div className=" mb-20 flex gap-3 text-white font-bold px-3 text-2xl items-center justify-center ml-4 self-start">
           <Image
@@ -19,6 +20,9 @@ const LeftSide = () => {
             height={30}
           />
           <h1>Gnpay Africa</h1>
+          <div className="sm:hidden block ">
+            <X size={`${30}px`}/>
+          </div>
         </div>
         {/*  */}
         <div className="w-full self-start flex px-2">
@@ -219,7 +223,7 @@ const LeftSide = () => {
           </Link>
         </div>
       </div>
-      <div className="self-start flex px-2 absolute bottom-7 left-4 py-2">
+      <div className="self-start flex px-2 sm:absolute bottom-7 left-4 py-2">
         <Link
           className={`py-4 flex gap-2 items-center px-10 min-w-[270px] self-center ${
             router.pathname === "/name"

@@ -1,15 +1,21 @@
 import Image from "next/image";
 import React from "react";
 import image from "@/app/user.png";
+import { ArrowLeft } from "lucide-react";
 
 const Header = () => {
   return (
     <div className="flex flex-col w-full h-full">
-      <div className="flex justify-between items-center px-10 py-4 text-sm bg-[#F5F7FA]">
-        <div>
-          <h1 className="mx-4 font-bold text-2xl">New Auto Gas Financing</h1>
+      <div className="flex sm:justify-between items-center sm:px-10 px-4 py-4 text-sm bg-[#F5F7FA]">
+        <div className="sm:hidden block">
+          <ArrowLeft />
         </div>
-        <div className="flex items-center">
+        <div className="w-full flex items-center justify-center sm:block">
+          <h1 className="sm:mx-4 sm:font-bold sm:text-2xl text-xl font-semibold">
+            New Auto Gas Financing
+          </h1>
+        </div>
+        <div className="sm:flex items-center hidden">
           <div className="mx-5 flex gap-2">
             <svg
               width="24"
@@ -49,7 +55,7 @@ const Header = () => {
               height={30}
             />
           </div>
-          <div className="mx-2 flex gap-2 items-center">
+          <div className="mx-2 sm:flex gap-2 items-center hidden ">
             <h1>Emmanuel Appah</h1>
             <svg
               width="24"
