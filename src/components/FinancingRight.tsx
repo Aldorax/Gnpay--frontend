@@ -42,18 +42,18 @@ const FinancingRight = () => {
 
   return (
     <main className="flex w-full h-full pb-5">
-      <div className="w-[320px] mr-10"></div>
+      <div className="w-[320px] sm:mr-10"></div>
 
       <div className="flex flex-col w-full h-full">
         <Header />
-        <div className="p-5 mx-16 mt-10 rounded-lg flex justify-between relative items-center">
+        <div className="p-5 sm:mx-16 sm:mt-10 mt-4 mx-4 rounded-lg flex justify-between relative items-center">
           <div
-            className={`border-b-4 p-1 w-[27vw] mx-auto mb-4 relative top-8 ${
+            className={`border-b-4 p-1 sm:w-[27vw] w-full mx-auto mb-4 relative top-8 ${
               activeStep > 1 ? "border-[#2A63E2]" : "border-[#ccc]"
             }`}
           ></div>
           <div
-            className={`flex items-center w-full justify-evenly absolute left-0 top-2`}
+            className={`flex items-center w-full sm:justify-evenly justify-between absolute left-0 top-2`}
           >
             {steps.map((step) => (
               <div>
@@ -87,10 +87,10 @@ const FinancingRight = () => {
         >
           Step 1
         </button> */}
-        <div className="flex gap-2 items-center justify-center mx-auto">
+        <div className="flex gap-2 items-center justify-center mx-auto w-full sm:w-auto">
           {activeStep > 1 ? (
             <button
-              className={`text-[#2A63E2] border border-[#2A63E2] p-5 min-w-[200px] max-w-[200px] mx-auto bg-white rounded-full mt-4 ${
+              className={`bg-[#2A63E2] sm:p-5 p-3 sm:min-w-[200px] sm:max-w-[200px] mx-auto w-full text-white rounded-full mt-4 font-semibold ${
                 activeStep > 1 ? "cursor-pointer" : "hidden"
               }`}
               onClick={handleDecrementButtonClick}
@@ -102,7 +102,7 @@ const FinancingRight = () => {
           )}
 
           <button
-            className={`bg-[#2A63E2] p-5 min-w-[200px] max-w-[200px] mx-auto text-white rounded-full mt-4 ${
+            className={`bg-[#2A63E2] sm:p-5 p-3 sm:min-w-[200px] sm:max-w-[200px] mx-auto w-full text-white rounded-full mt-4 font-semibold ${
               activeStep === 3 ? "cursor-pointer" : ""
             }`}
             onClick={handleButtonClick}

@@ -15,7 +15,7 @@ export default function SwitchComponent({ name, desription }: data) {
       classNames={{
         base: cn(
           "inline-flex flex-row-reverse min-w-[100%] w-full max-w-md bg-content1 hover:bg-content2 items-center",
-          "justify-between cursor-pointer rounded-lg gap-2 p-4 border-2 border-transparent",
+          "justify-between cursor-pointer rounded-lg sm:gap-2 sm:p-4 p-2 border-2 border-transparent",
           "data-[selected=true]:border-primary"
         ),
       }}
@@ -33,7 +33,7 @@ export default function SwitchComponent({ name, desription }: data) {
       // }}
     >
       <div className="flex flex-col gap-1 gap-y-4 px-4">
-        <p className="text-lg font-bold">{name}</p>
+        <p className="text-lg sm:font-bold font-semibold">{name}</p>
         <p className="text-md text-default-500">{desription}</p>
       </div>
     </Switch>

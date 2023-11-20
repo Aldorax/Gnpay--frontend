@@ -14,7 +14,7 @@ interface TransactionsProps {
 
 const Transactions: React.FC<TransactionsProps> = ({ data }) => {
   return (
-    <div className="border-gray-300 min-w-[400px] max-w-[400px] md:min-w-[700px] md:max-w-[700px] p-4 md:p-10 ml-16 mb-10 rounded-lg bg-white h-[250px] md:h-[300px]">
+    <div className="border-gray-300 w-full md:min-w-[700px] md:max-w-[700px] p-4 md:p-10 sm:ml-16 sm:mb-10 rounded-lg bg-white h-[250px] md:h-[300px]">
       <div className="flex items-center justify-between mb-4">
         <h1 className="font-bold text-xl p-3">Transactions</h1>
         <div className="flex gap-3 items-center"></div>

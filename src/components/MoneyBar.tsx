@@ -2,7 +2,7 @@ import React from "react";
 
 const MoneyBar = () => {
   return (
-    <div className="lg:min-w-[37vw] lg:max-w-[37vw] lg:min-h-[200px] min-w-[80vw] max-w-[80vw] min-h-[170px] border border-gray-400/25 px-5 py-4 rounded-lg flex flex-col justify-between relative">
+    <div className="lg:min-w-[37vw] lg:max-w-[37vw] lg:min-h-[200px] w-full min-h-[170px] border border-gray-400/25 px-5 py-4 rounded-lg flex flex-col justify-between relative">
       <div className="flex flex-col lg:flex-row items-center gap-5">
         <div className="p-3 rounded-full bg-black hidden lg:flex">
           <svg
@@ -35,7 +35,7 @@ const MoneyBar = () => {
         </div>
       </div>
       <button
-        className="self-center lg:self-end px-2 py-4 md:p-5 bg-[#2A63E2] min-w-[150px] max-w-[150px] rounded-xl text-white text-medium md:text-lg"
+        className="self-center lg:self-end px-2 py-4 md:p-5 bg-[#2A63E2] sm:min-w-[150px] sm:max-w-[150px] w-full rounded-xl text-white text-medium md:text-lg"
         type="button"
       >
         + Add money
