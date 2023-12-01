@@ -1,0 +1,29 @@
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  z-index: 1000;
+  transition: transform 0.3s ease-out; /* Add a smooth transition effect */
+  transform: translateX(-100%); /* Initially hide the mobile menu off-screen */
+}
+
+.mobile-menu-open {
+  transform: translateX(0); /* Move the mobile menu on-screen when open */
+}
+
+.close-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  z-index: 1000;
+  transition: transform 0.3s ease-out; /* Add a smooth transition effect */
+  transform: translateX(-100%); /* Initially hide the mobile menu off-screen */
+}
